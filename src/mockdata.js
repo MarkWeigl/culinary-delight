@@ -1,4 +1,4 @@
-data = {
+const data = {
             recipes: [{
                 recipename: 'Fried Eggs',
                 description: 'Fried Eggs are great for breakfast',
@@ -34,7 +34,7 @@ data = {
                               'when egg is done on other side remove from pan and put on a plate to serve'],
                 picture: 'https://api.adorable.io/avatars/64/alice%40thinkful.com',
                 servings: '1'
-            } 
+            }] 
         };
 
-export data;
+export default data;
