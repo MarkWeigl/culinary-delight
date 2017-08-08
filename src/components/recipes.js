@@ -12,12 +12,13 @@ export default class Recipes extends React.Component {
   render(){
     return (
       <div>
-        <RecipeSplash />
-        <RecipeAdd />
-        <RecipeDelete />
-        <RecipeEdit />
-        <RecipeView />
-        <RecipeSearch />
+        <h1>Recipes go here</h1>
+        // <RecipeSplash />
+        // <RecipeAdd />
+        // <RecipeDelete />
+        // <RecipeEdit />
+        // <RecipeView />
+        // <RecipeSearch />
       </div>
     );
   }
