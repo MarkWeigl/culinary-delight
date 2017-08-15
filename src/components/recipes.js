@@ -11,8 +11,8 @@ import RecipeSearch from './recipe-search';
 export default class Recipes extends React.Component {
   render(){
     return (
-      <div>
-        <h1>Recipes go here</h1>
+      <div className="container">
+        <h2>Recipes</h2>
         <RecipeForm />
       </div>
     );
