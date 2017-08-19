@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
 import './menu.css';
 import Recipes from './recipes';
-import AddRecipe from './recipe-add';
+import RecipeForm from './recipe-form';
 
 export default function Menu(props) {
   return (
@@ -23,7 +23,7 @@ export default function Menu(props) {
         </ul>
         <div>
           <Route exact path="/recipe-list" component={Recipes} />
-          <Route exact path="/add-recipe" component={AddRecipe} />
+          <Route exact path="/add-recipe" component={RecipeForm} />
         
         </div>
 

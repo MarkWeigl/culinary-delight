@@ -5,7 +5,12 @@ class AddRecipe extends Component {
   
   render() {
     
-    return    
+    return(
+      <div>
+        <h2>Add Recipe</h2>
+      </div>
+    )
+
   }
 }
       
