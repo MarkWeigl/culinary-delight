@@ -1,10 +1,19 @@
 import {
-  ADD_RECIPE
+  ADD_RECIPE, EDIT_RECIPE, DELETE_RECIPE
 } from './actions';
 import data from './mockdata.js';
 
 const initialState = {
-  data: data
+  recipe: {
+    name: "chicken",
+    description: "chicken recipe",
+    course: "",
+    cuisine: "",
+    ingredients: "",
+    steps: "",
+    servings: "",
+    servingsize: ""
+  }
 };
 
 export const recipeReducer = (state=initialState, action) => {

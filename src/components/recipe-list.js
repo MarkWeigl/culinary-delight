@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class RecipeView extends Component {
+class RecipeList extends Component {
   constructor(props) {
     super(props);
   }
@@ -18,4 +18,4 @@ class RecipeView extends Component {
   }
 };
 
-export default RecipeView;
+export default RecipeList;

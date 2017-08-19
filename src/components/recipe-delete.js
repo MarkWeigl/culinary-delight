@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-class RecipeDelete extends Component {
+class DeleteRecipe extends Component {
 }  
     
 
-export default RecipeDelete;
+export default DeleteRecipe;
