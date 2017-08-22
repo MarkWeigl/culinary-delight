@@ -5,7 +5,7 @@ import './menu.css';
 import Recipes from './recipes';
 import RecipeForm from './recipe-form';
 
-export default function Menu(props) {
+//export default function Menu(props) {
   return (
     <Router>
       <div className="menuBar">
