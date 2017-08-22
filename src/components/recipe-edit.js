@@ -18,7 +18,7 @@ class RecipeEdit extends Component {
         <div className="form-group">
             <label htmlFor="description">Description</label>
             <textarea rows="4" className="form-control" id="description"
-                placeholder="Recipe Description"
+                value={this.props.recipe.description}
                 ref={input => this.inputText = input }></textarea>
         </div>
         <div className="form-group">
@@ -28,6 +28,7 @@ class RecipeEdit extends Component {
               <option value="lunch">Lunch</option>
               <option value="dinner">Dinner</option>
               <option value="dessert">Dessert</option> 
+              value={this.props.recipe.course}
               ref={input => this.inputText = input } 
             </select>
         </div>
@@ -40,35 +41,36 @@ class RecipeEdit extends Component {
               <option value="dessert">Mexican</option>
               <option value="breakfast">South American</option>
               <option value="lunch">Middle Eastern</option>
+              value={this.props.recipe.cuisine}
               ref={input => this.inputText = input }
               </select>
         </div>
           <label htmlFor="ingredients">Ingredients</label>
           <input type="text" className="form-control" id="ingredients"
-            placeholder="Recipe Ingredients"
+            value={this.props.recipe.ingredients}
             ref={input => this.inputText = input }
           />
         <div className="form-group">
             <label htmlFor="steps">Cooking Steps</label>
             <textarea rows="4" className="form-control" id="steps"
-                placeholder="Cooking Steps"
+                value={this.props.recipe.steps}
                 ref={input => this.inputText = input }></textarea>
         </div>
         <div className="form-group">
             <label htmlFor="servings">Servings</label>
             <input type="number" min="1" className="form-control" id="servings"
-                placeholder="Servings"
+                value={this.props.recipe.servings}
                 ref={input => this.inputText = input }
             />
         </div>
         <div className="form-group">
             <label htmlFor="servingsize">Serving Size</label>
             <input type="text" className="form-control" id="servingsize"
-                placeholder="Serving Size"
+                value={this.props.recipe.servingsize}
                 ref={input => this.inputText = input }
             />
         </div>
-        <Button bsStyle="primary" type="submit" className="add-recipe-Button">Add a Recipe</Button>
+        <Button bsStyle="primary" type="submit" className="edit-recipe-Button">Edit a Recipe</Button>
         <Button className="edit-btn" onClick={this.RecipeForm}>Close</Button>
         <Button type="submit" className="btn btn-primary">Submit</Button>
       </form>

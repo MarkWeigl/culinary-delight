@@ -5,7 +5,7 @@ import './menu.css';
 import Recipes from './recipes';
 import RecipeForm from './recipe-form';
 
-//export default function Menu(props) {
+export default function Menu(props) {
   return (
     <Router>
       <div className="menuBar">
@@ -18,6 +18,11 @@ import RecipeForm from './recipe-form';
           <li className="menuItem">
             <Link to={`/add-recipe`}>
               Add Recipe
+            </Link>
+          </li>
+          <li className="menuItem">
+            <Link to={`/recipe-edit`}>
+              Edit Recipe
             </Link>
           </li>
         </ul>
