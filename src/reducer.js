@@ -16,11 +16,6 @@ const initialState = {
   }
 };
 
-const reducers = {
-  routing,
-  form: formReducer
-};
-
 export const recipeReducer = (state=initialState, action) => {
 
   return state; 
