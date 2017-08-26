@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
+import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './menu.css';
 import Recipes from './recipes';
 import RecipeForm from './recipe-form';
