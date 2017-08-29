@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './menu.css';
 import Recipes from './recipes';
 import RecipeForm from './recipe-form';
+import RecipeEdit from './recipe-edit';
 
 export default function Menu(props) {
   return (
@@ -28,6 +29,7 @@ export default function Menu(props) {
         <div>
           <Route exact path="/recipe-list" component={Recipes} />
           <Route exact path="/add-recipe" component={RecipeForm} />
+          <Route exact path="/recipe-edit" component={RecipeEdit} />
         
         </div>
 

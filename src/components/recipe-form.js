@@ -13,7 +13,7 @@ export class RecipeForm extends Component {
 
   render() {
     return (
-      <form onSubmit={e => addRecipe(e)}>            
+      <form onSubmit={e => this.addRecipe(e)}>            
         <div>
             <label>Name</label>
             <div>
