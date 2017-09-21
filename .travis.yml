@@ -1,20 +1,11 @@
- language: node_js
- node_js: node
- cache:
-   directories:
-     - node_modules
- script:
-   - npm test
- env:
-   - CI=true
-
- before_deploy:
-   - npm install netlify-cli -g
-   - npm run build
-
- deploy:
-   provider: script
-   script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./build
-   skip_cleanup: true
-   on:
-     branch: master
+language: node_js
+node_js: node
+ 
+deploy:
+  provider: heroku
+  api_key: 
+    secure: f4232192-c6a9-4cb5-9d0b-00d5c869770f
+  app: stormy-mesa-11961
+  skip_cleanup: true
+  on:
+    repo: MarkWeigl/culinary-api

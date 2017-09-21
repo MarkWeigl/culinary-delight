@@ -7,7 +7,6 @@ export class RecipeForm extends Component {
   addRecipe(e) {
     e.preventDefault();
     const recipe = {};
-    recipe.title = this.FieldText.value;
     this.props.dispatch(addRecipe(recipe));
   }
 
@@ -63,16 +62,6 @@ export class RecipeForm extends Component {
             </div>
         </div>
         <div>
-            <label>Cuisine</label>
-            <div>    
-                <Field 
-                    name="ingredients"
-                    type="textarea" 
-                    component="textarea" 
-                />
-            </div>
-        </div>
-        <div>
             <label>Steps</label>
             <div>
                 <Field 
@@ -102,7 +91,6 @@ export class RecipeForm extends Component {
                 />
             </div>
         </div>        
-        <Button bsStyle="primary" type="submit" className="add-recipe-Button">Add a Recipe</Button>
         <Button className="edit-btn" onClick={this.RecipeForm}>Close</Button>
         <Button type="submit" className="btn btn-primary">Submit</Button>
       </form>
