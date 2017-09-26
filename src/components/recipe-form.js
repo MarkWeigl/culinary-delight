@@ -4,15 +4,13 @@ import {Button} from 'react-bootstrap';
 import {reduxForm, Field} from 'redux-form';
 
 export class RecipeForm extends Component {
-  addRecipe(e) {
-    e.preventDefault();
-    const recipe = {};
-    this.props.dispatch(addRecipe(recipe));
+  addRecipe(values) {
+      this.props.dispatch(addRecipe(values));
   }
 
   render() {
     return (
-      <form onSubmit={e => this.addRecipe(e)}>            
+      <form onSubmit={this.props.handleSubmit(values => this.addRecipe(values))}>            
         <div>
             <label>Name</label>
             <div>
@@ -91,7 +89,6 @@ export class RecipeForm extends Component {
                 />
             </div>
         </div>        
-        <Button className="edit-btn" onClick={this.RecipeForm}>Close</Button>
         <Button type="submit" className="btn btn-primary">Submit</Button>
       </form>
     )
