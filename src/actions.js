@@ -12,16 +12,41 @@ export const addRecipe = (recipe) => {
   }
 };
 
+export const viewRecipe = (recipe) => {
+  const request = axios({
+    method: 'get',
+    url: 'http://localhost:8080/recipes',
+    data: recipe
+  });
+  return {
+    type: VIEW_RECIPE,
+    payload: request
+  }
+};
+
 export const EDIT_RECIPE = 'EDIT_RECIPE';
-export const editRecipe = (recipe) => ({
-  type: EDIT_RECIPE,
-  recipe  
-});
+export const editRecipe = (recipe) => {
+  const request = axios({
+    method: 'put',
+    url: 'http://localhost:8080/recipes',
+    data: recipe
+  });
+  return {
+    type: EDIT_RECIPE,
+    payload: request
+  }
+};
 
 export const DELETE_RECIPE = 'DELETE_RECIPE';
-export const deleteRecipe = (recipe) => ({
-  type: DELETE_RECIPE,
-  recipe  
-});
-
+export const deleteRecipe = (recipe) => {
+  const request = axios({
+    method: 'delete',
+    url: 'http://localhost:8080/recipes',
+    data: recipe
+  });
+  return {
+    type: DELETE_RECIPE,
+    payload: request
+  }
+};
 
