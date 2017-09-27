@@ -12,6 +12,7 @@ export const addRecipe = (recipe) => {
   }
 };
 
+export const VIEW_RECIPE = 'VIEW_RECIPE';
 export const viewRecipe = (recipe) => {
   const request = axios({
     method: 'get',
