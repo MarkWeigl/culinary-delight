@@ -1,12 +1,18 @@
 import {
-  ADD_RECIPE, VIEW_RECIPE_, EDIT_RECIPE, DELETE_RECIPE
+  ADD_RECIPE, VIEW_RECIPE, EDIT_RECIPE, DELETE_RECIPE, FETCH_RECIPES, FETCH_RECIPES_SUCCESS, 
+  FETCH_RECIPES_FAILURE
 } from './actions';
 import data from './mockdata.js';
 
 const initialState = {
+  recipeList: {
+    recipes: [], 
+    error: null,
+    loading: false
+  },
   recipe: {
-    name: "chicken",
-    description: "chicken recipe",
+    name: "",
+    description: "",
     course: "",
     cuisine: "",
     ingredients: "",
@@ -17,6 +23,17 @@ const initialState = {
 };
 
 export const recipeReducer = (state=initialState, action) => {
+  let error;
+  switch(action.type) {
 
-  return state; 
-}
+    case FETCH_RECIPES:
+      return Object.assign({},state,{recipeList: {recipes:[], error: null, loading: true} }); 
+    case FETCH_RECIPES_SUCCESS:
+      return Object.assign({},state,{recipeList: {recipes: action.payload, error:null, loading: false} });
+    case FETCH_RECIPES_FAILURE:
+      error = action.payload || {message: action.payload.message};
+      return Object.assign({},state,{recipeList: {recipes: [], error: error, loading: false} });
+    default: 
+      return state; 
+  }
+};

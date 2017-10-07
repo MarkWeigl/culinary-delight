@@ -1,9 +1,10 @@
-import {recipeReducer} from './reducer';
 import {createStore, combineReducers} from 'redux'; 
+import {recipeReducer} from './reducer';
 import { reducer as formReducer } from 'redux-form';
-const reducers = {
-  recipeReducer, 
-  form: formReducer
-};
-const reducer = combineReducers(reducers);
-export default createStore(reducer);
+
+export default createStore(
+  combineReducers({
+    recipeReducer, 
+    form: formReducer
+  })
+);

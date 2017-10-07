@@ -5,11 +5,13 @@ class DeleteRecipe extends Component {
 }  
 
 export function DeleteRecipe(_id) {
-  const request = axios.delete(`${ROOT_URL}/recipes/${_id}`);
+  deleteRecipe(_id) {
+      this.props.dispatch(deleteRecipe(_id));
 
-  return {
-    type: DELETE_RECIPE,
+  render() {
+    const onClick={this.props.handleClick(req => this.deleteRecipe(_id))}>
+    return <Button className="btn btn-primary">Delete</Button>
   };
-}
+};
 
 export default DeleteRecipe;

@@ -1,0 +1,22 @@
+import { connect } from 'react-redux'
+import { ViewRecipes, ViewRecipesSuccess, ViewRecipesFailure } from '../actions';
+import RecipeList from '../components/recipe-list';
+
+
+const mapStateToProps = (state) => {
+  return { 
+    RecipeList: state.recipes.RecipeList
+  };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    ViewRecipes: () => {
+      dispatch(ViewRecipes()).then((response) => {
+            !response.error ? dispatch(ViewRecipesSuccess(response.payload.data)) : dispatch(ViewRecipesFailure(response.payload.data));
+          });
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeList);
