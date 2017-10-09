@@ -5,6 +5,6 @@ import { reducer as formReducer } from 'redux-form';
 export default createStore(
   combineReducers({
     recipeReducer, 
-    form: formReducer
+ //   form: formReducer
   })
 );
