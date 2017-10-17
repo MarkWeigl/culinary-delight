@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
+import {fetchRecipes} from '../actions'
+import { connect } from 'react-redux' 
+import { bindActionCreators } from 'redux'
 
 class RecipeList extends Component {
   componentWillMount() {
@@ -39,3 +42,6 @@ class RecipeList extends Component {
 }
 
 export default RecipeList;
+
+
+

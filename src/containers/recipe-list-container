@@ -5,14 +5,14 @@ import RecipeList from '../components/recipe-list';
 
 const mapStateToProps = (state) => {
   return { 
-    RecipeList: state.recipes.RecipeList
+    recipeList: state.recipeList
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    ViewRecipes: () => {
-      dispatch(ViewRecipes()).then((response) => {
+    fetchRecipes: () => {
+      dispatch(fetchRecipes()).then((response) => {
             !response.error ? dispatch(ViewRecipesSuccess(response.payload.data)) : dispatch(ViewRecipesFailure(response.payload.data));
           });
     }

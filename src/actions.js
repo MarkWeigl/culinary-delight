@@ -52,7 +52,6 @@ export const deleteRecipe = (id) => {
   }
 };
 
-
 export const VIEW_RECIPES_SUCCESS = 'VIEW_RECIPES_SUCCESS';
 export function ViewRecipesSuccess(activeRecipe) {
   return {
