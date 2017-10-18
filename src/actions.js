@@ -53,7 +53,7 @@ export const deleteRecipe = (id) => {
 };
 
 export const VIEW_RECIPES_SUCCESS = 'VIEW_RECIPES_SUCCESS';
-export function ViewRecipesSuccess(activeRecipe) {
+export const viewRecipesSuccess = (activeRecipe) => {
   return {
     type: VIEW_RECIPES_SUCCESS,
     payload: activeRecipe
@@ -61,7 +61,7 @@ export function ViewRecipesSuccess(activeRecipe) {
 }
 
 export const VIEW_RECIPES_FAILURE = 'VIEW_RECIPES_FAILURE';
-export function ViewRecipesFailure(error) {
+export const viewRecipesFailure = (error) => {
   return {
     type: VIEW_RECIPES_FAILURE,
     payload: error

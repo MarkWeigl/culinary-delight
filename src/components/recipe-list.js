@@ -22,7 +22,7 @@ class RecipeList extends Component {
   }
 
   render() {
-    const { recipes, loading, error } = this.props.RecipeList;
+    const { recipes, loading, error } = this.props.recipeList;
 
     if(loading) {
       return <div className="container"><h1>Recipes</h1><h3>Loading...</h3></div>      
