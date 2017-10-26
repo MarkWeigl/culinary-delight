@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { ViewRecipes, ViewRecipesSuccess, ViewRecipesFailure } from '../actions';
+import { viewRecipes, viewRecipesSuccess, viewRecipesFailure, fetchRecipes } from '../actions';
 import RecipeList from '../components/recipe-list';
 
 
@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchRecipes: () => {
       dispatch(fetchRecipes()).then((response) => {
-            !response.error ? dispatch(ViewRecipesSuccess(response.payload.data)) : dispatch(ViewRecipesFailure(response.payload.data));
+            !response.error ? dispatch(viewRecipesSuccess(response.payload.data)) : dispatch(viewRecipesFailure(response.payload.data));
           });
     }
   }
