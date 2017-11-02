@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 
 class RecipeList extends Component {
   componentWillMount() {
-    this.props.fetchRecipes();
+    fetchRecipes();
   }
 
   renderRecipes(recipes) {
@@ -22,26 +22,21 @@ class RecipeList extends Component {
   }
 
   render() {
-    const { recipes, loading, error } = this.props.recipeList;
-
-    if(loading) {
-      return <div className="container"><h1>Recipes</h1><h3>Loading...</h3></div>      
-    } else if(error) {
-      return <div className="alert alert-danger">Error: {error.message}</div>
-    }
-
+    
     return (
       <div className="container">
         <h1>Recipes</h1>
         <ul className="list-group">
-          {this.renderRecipes(recipes)}
+          {this.renderRecipes(this.props.recipes)}
         </ul>
       </div>
     );
   }
 }
-
-export default RecipeList;
+function mapStateToProps(state){
+  return {recipes: state.recipeList.recipes}
+}
+export default connect(mapStateToProps)(RecipeList);
 
 
 
