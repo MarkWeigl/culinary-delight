@@ -5,7 +5,7 @@ export default class Recipes extends React.Component {
   render(){
     return (
       <div className="container">
-        <h2>Recipes</h2>
+        <h1>Recipes</h1>
         <RecipeForm />
       </div>
     );
