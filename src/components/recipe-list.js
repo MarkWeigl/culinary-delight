@@ -33,9 +33,11 @@ class RecipeList extends Component {
     );
   }
 }
-function mapStateToProps(state){
-  return {recipes: state.recipeList.recipes}
-}
+
+const mapStateToProps = state => ({
+  recipes: state.recipeReducer.recipeList.recipes
+});
+
 export default connect(mapStateToProps)(RecipeList);
 
 
