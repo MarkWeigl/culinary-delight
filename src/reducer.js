@@ -29,7 +29,7 @@ export const recipeReducer = (state=initialState, action) => {
     case FETCH_RECIPES:
       return Object.assign({},state,{recipeList: {recipes:[], error: null, loading: true} }); 
     case FETCH_RECIPES_SUCCESS:
-      return Object.assign({},state,{recipeList: {recipes: action.payload, error:null, loading: false} });
+      return Object.assign({},state,{recipeList: {recipes: action.recipes, error:null, loading: false} });
     case FETCH_RECIPES_FAILURE:
       error = action.payload || {message: action.payload.message};
       return Object.assign({},state,{recipeList: {recipes: [], error: error, loading: false} });

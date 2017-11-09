@@ -6,7 +6,8 @@ import { bindActionCreators } from 'redux'
 
 class RecipeList extends Component {
   componentWillMount() {
-    fetchRecipes();
+    console.log('fetching');
+    this.props.dispatch(fetchRecipes());
   }
 
   renderRecipes(recipes) {
@@ -14,7 +15,7 @@ class RecipeList extends Component {
       return (
         <li className="list-group-item" key={recipe._id}>
           <Link style={{color:'black'}} to={"recipes/" + recipe._id}>
-            <h3 className="list-group-item-heading">{recipe.title}</h3>
+            <h3 className="list-group-item-heading">{recipe.name}</h3>
           </Link>
         </li>
       );
