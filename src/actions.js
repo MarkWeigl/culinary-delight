@@ -1,7 +1,9 @@
 import axios from 'axios';
 import {API_BASE_URL} from './config.js';
 export const FETCH_RECIPES = 'FETCH_RECIPES';
+export const FETCH_RECIPE = 'FETCH_RECIPE';
 export const FETCH_RECIPES_FAILURE = 'FETCH_RECIPES_FAILURE';
+export const RECIPE_DETAILS = 'RECIPE_DETAILS';
 export const RESET_RECIPES = 'RESET_RECIPES';
 
 export const ADD_RECIPE = 'ADD_RECIPE';
@@ -24,9 +26,7 @@ export const addRecipe = (recipe) => {
 export const fetchRecipes = () => dispatch => {
     fetch(`${API_BASE_URL}/recipes`)
       .then(res => res.json())
-
       .then(recipes => {
-        console.log(recipes);
         dispatch(fetchRecipesSuccess(recipes))
       }
     );
@@ -36,6 +36,24 @@ export const FETCH_RECIPES_SUCCESS = 'FETCH_RECIPES_SUCCESS';
 export const fetchRecipesSuccess = recipes => ({
   type: FETCH_RECIPES_SUCCESS,
   recipes  
+})
+
+export const recipeDetails = (id) => dispatch => {
+    console.log(id);
+    const route = `${API_BASE_URL}/recipes/${id}`;
+    console.log(route);
+    fetch(route)
+      .then(res => res.json())
+      .then(recipe => {
+        dispatch(fetchRecipeSuccess(recipe))
+      }
+    );
+};
+
+export const FETCH_RECIPE_SUCCESS = 'FETCH_RECIPE_SUCCESS';
+export const fetchRecipeSuccess = recipe => ({
+  type: FETCH_RECIPE_SUCCESS,
+  recipe  
 })
 
 export const EDIT_RECIPE = 'EDIT_RECIPE';
