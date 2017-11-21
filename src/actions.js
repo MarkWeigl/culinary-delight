@@ -39,9 +39,7 @@ export const fetchRecipesSuccess = recipes => ({
 })
 
 export const recipeDetails = (id) => dispatch => {
-    console.log(id);
     const route = `${API_BASE_URL}/recipes/${id}`;
-    console.log(route);
     fetch(route)
       .then(res => res.json())
       .then(recipe => {
