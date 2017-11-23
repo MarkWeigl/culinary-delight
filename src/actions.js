@@ -58,7 +58,7 @@ export const EDIT_RECIPE = 'EDIT_RECIPE';
 export const editRecipe = (recipe) => {
   const request = axios({
     method: 'put',
-    url: 'http://localhost:8080/recipes',
+    url: 'http://localhost:8080/recipes/'+recipe._id,
     data: recipe
   });
   return {

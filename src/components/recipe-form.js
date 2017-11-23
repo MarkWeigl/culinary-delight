@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {addRecipe} from '../actions';
 import {Button} from 'react-bootstrap';
 import {reduxForm, Field} from 'redux-form';
+import {connect} from 'react';
 
 export class RecipeForm extends Component {
   addRecipe(values) {

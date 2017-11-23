@@ -21,7 +21,12 @@ class RecipeDetails extends Component {
         <h2 className="list-group-item">{this.props.recipe.ingredients}</h2>
         <h2 className="list-group-item">{this.props.recipe.cookingsteps}</h2>
         <h2 className="list-group-item">{this.props.recipe.servings}</h2>
-        <h3 className="delete-button" key={this.props.recipe._id} 
+        <h3 className="edit-button">  
+            <Link to={`/recipe-edit`}>
+              Edit Recipe
+            </Link>
+        </h3>
+        <h3 className="delete-button" 
           onClick = {() => this.props.deleteRecipe(this.props.recipe._id)}>
             <Link to={`/recipe-delete`}>
               Delete Recipe

@@ -12,6 +12,7 @@ const initialState = {
     loading: false
   },
   recipe: {
+    id: "",
     name: "",
     description: "",
     course: "",

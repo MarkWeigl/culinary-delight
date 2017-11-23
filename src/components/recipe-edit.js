@@ -2,17 +2,16 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Button} from 'react-bootstrap';
 import {reduxForm, Field} from 'redux-form';
+import {editRecipe} from '../actions';
 
-// export class RecipeEdit extends Component {
-//   editRecipe(e) {
-//     e.preventDefault();
-//     const recipe = {};
-// }
+class RecipeEdit extends Component {
+  editRecipe(values) {
+    this.props.dispatch(editRecipe(values));
+  }
 
-  let RecipeEdit = props => {
-    const { handleSubmit, load, pristine, reset, submitting } = props
+  render() {
     return (
-      <form onSubmit={e => this.editRecipe(e)}>            
+      <form onSubmit={this.props.handleSubmit(values => this.editRecipe(values))}>              
         <div>
             <label>Name</label>
             <div>
@@ -101,24 +100,23 @@ import {reduxForm, Field} from 'redux-form';
                 />
             </div>
         </div>        
-        <Button bsStyle="primary" type="submit" className="add-recipe-Button">Edit a Recipe</Button>
-        <Button className="edit-btn" onClick={this.RecipeEdit}>Close</Button>
+        <Button className="edit-btn" onClick={this.RecipeEdit}>Cancel</Button>
         <Button type="submit" className="btn btn-primary">Submit</Button>
       </form>
     )
+    }
 };
 
 RecipeEdit = reduxForm({
-  form: 'recipeEdit'
+    form: 'recipeEdit'
 })(RecipeEdit)
-
+ 
 RecipeEdit = connect(
   state => ({
-    initialValues: {name:  "Baked Chicken",
-                    description:  "Great baked chicken recipe"
-        }
+    initialValues: state.recipeReducer.recipe
   })            
 )(RecipeEdit)
 
 export default RecipeEdit;
+
 
