@@ -1,11 +1,27 @@
-.menuBar {
 
+
+.main {
+
+}
+
+.menuBar {
+  width: 100%;
+  position: fixed; 
+  color: red;
+  top: 0; 
+  width: 100%;
+  background-image: url('../images/bgi.png');
 }
 
 .menuList {
-
+  text-align: center;
+  width: 100%;
+  list-style: none;
+  padding: 0;
 }
 
 .menuItem {
-  
+  width: 100%;
+  padding: 0;
+  color: red;
 }

@@ -22,11 +22,6 @@ export default function Menu(props) {
               Add Recipe
             </Link>
           </li>
-          <li className="menuItem">
-            <Link to={`/recipe-edit`}>
-              Edit Recipe
-            </Link>
-          </li>
         </ul>
         <div>
           <Route exact path="/recipe-list" component={RecipeList} />
