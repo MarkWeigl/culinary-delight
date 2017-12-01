@@ -3,17 +3,19 @@ import {addRecipe} from '../actions';
 import {Button} from 'react-bootstrap';
 import {reduxForm, Field} from 'redux-form';
 import {connect} from 'react';
+import {Redirect} from 'react-router-dom';
 
 export class RecipeForm extends Component {
   addRecipe(values) {
       this.props.dispatch(addRecipe(values));
+      this.props.history.push("/recipe-list");
   }
 
   render() {
     return (
       <div className="container">
         <div className="row">
-            <div className="col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1"> 
+            <div className="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1"> 
               <form onSubmit={this.props.handleSubmit(values => this.addRecipe(values))}>            
                 <div>
                     <label>Name</label>
@@ -61,6 +63,16 @@ export class RecipeForm extends Component {
                             <option value="breakfast">South American</option>
                             <option value="lunch">Middle Eastern</option>
                         </Field>
+                    </div>
+                </div>
+                <div>
+                    <label>Ingredients</label>
+                    <div>
+                        <Field 
+                            name="ingredients"
+                            type="textarea" 
+                            component="textarea" 
+                        />
                     </div>
                 </div>
                 <div>

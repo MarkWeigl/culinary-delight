@@ -1,16 +1,22 @@
+body {
+  background-image: url('../images/bgi.png');
+}
 
+#splash {
+  text-align: center;
+  color: red;
+}
 
-.main {
-
+#content {
+  background-color: white;
+  padding: 20px;
 }
 
 .menuBar {
   width: 100%;
   position: fixed; 
-  color: red;
   top: 0; 
   width: 100%;
-  background-image: url('../images/bgi.png');
 }
 
 .menuList {
