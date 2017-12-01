@@ -2,7 +2,7 @@ body {
   background-image: url('../images/bgi.png');
 }
 
-#splash {
+.splash {
   text-align: center;
   color: red;
 }
