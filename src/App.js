@@ -1,18 +1,43 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import RecipeForm from './components/recipe-form';
+import RecipeEdit from './components/recipe-edit';
+import RecipeList from './components/recipe-list';
+import RecipeDetails from './components/recipe-details';
+import Splash from './components/splash';
 import './App.css';
 import Menu from './components/menu';
-
-class App extends Component {
-  render() {
+import {connect} from 'react-redux';
+export default class App extends Component {
+  
+  render () {
     return (
-        <div className="App">
-          <Menu />
-          <div className="App-header">
-            <h1>Culinary Delight</h1>
+      <Router>
+        <div className="menuBar">
+          <ul className="menuList">
+            <li className="menuItem">
+              <Link to={`/recipe-list`}>
+                Recipes
+              </Link>
+            </li>
+            <li className="menuItem">
+              <Link to={`/add-recipe`}>
+                Add Recipe
+              </Link>
+            </li>
+          </ul>
+          <Splash/> 
+          <div>
+            <Route exact path="/recipe-list" component={RecipeList} />
+            <Route exact path="/add-recipe" component={RecipeForm} />
+            <Route exact path="/recipe-edit" component={RecipeEdit} />
+            <Route exact path="/recipe-details" component={RecipeDetails} />
+          
           </div>
+
         </div>
-    );
+      </Router>
+    )
   }
 }
 
-export default App;

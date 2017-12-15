@@ -1,12 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import './menu.css';
-import Recipes from './recipes';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 
-export class Menu extends React.Component {
+export class HeaderBar extends React.Component {
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
@@ -21,14 +18,16 @@ export class Menu extends React.Component {
             );
         }
         return (
-            <div className="menu">
-                <h1>Culinary Delight</h1>
+            <div className="header-bar">
+                <h1>Foo App</h1>
                 {logOutButton}
             </div>
         );
     }
 }
-//export default function Menu(props) 
-  
 
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
 
+export default connect(mapStateToProps)(HeaderBar);

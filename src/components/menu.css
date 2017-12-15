@@ -2,9 +2,8 @@ body {
   background-image: url('../images/bgi.png');
 }
 
-.splash {
+.app-header {
   text-align: center;
-  color: red;
 }
 
 #content {
@@ -12,22 +11,15 @@ body {
   padding: 20px;
 }
 
-.menuBar {
-  width: 100%;
-  position: fixed; 
-  top: 0; 
-  width: 100%;
-}
-
 .menuList {
   text-align: center;
   width: 100%;
   list-style: none;
-  padding: 0;
 }
 
 .menuItem {
-  width: 100%;
-  padding: 0;
+  display: inline;
+  padding: 0 20px;
   color: red;
 }
+
