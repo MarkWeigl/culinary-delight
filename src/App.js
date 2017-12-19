@@ -4,6 +4,7 @@ import RecipeForm from './components/recipe-form';
 import RecipeEdit from './components/recipe-edit';
 import RecipeList from './components/recipe-list';
 import RecipeDetails from './components/recipe-details';
+import RegistrationPage from './components/registration-page';
 import Splash from './components/splash';
 import './App.css';
 import Menu from './components/menu';
@@ -12,7 +13,6 @@ export default class App extends Component {
   
   render () {
     return (
-      <Router>
         <div className="menuBar">
           <ul className="menuList">
             <li className="menuItem">
@@ -32,11 +32,11 @@ export default class App extends Component {
             <Route exact path="/add-recipe" component={RecipeForm} />
             <Route exact path="/recipe-edit" component={RecipeEdit} />
             <Route exact path="/recipe-details" component={RecipeDetails} />
+            <Route exact path="/register" component={RegistrationPage} />
           
           </div>
 
         </div>
-      </Router>
     )
   }
 }
