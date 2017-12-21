@@ -9,15 +9,17 @@ export const RECIPE_DETAILS = 'RECIPE_DETAILS';
 export const RESET_RECIPES = 'RESET_RECIPES';
 
 export const ADD_RECIPE = 'ADD_RECIPE';
-export const addRecipe = (recipe) => {
+export const addRecipe = (recipe) => dispatch => {
   fetch(`${API_BASE_URL}/recipes`,
     {method:'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(recipe)
-  }).then(res => {
-
+  })
+  .then(res => res.json())
+  .then(res => {
+    dispatch(fetchRecipes());
   });
   return {
     type: ADD_RECIPE,
@@ -65,7 +67,7 @@ export const editRecipe = (recipe) => {
   });
   return {
     type: EDIT_RECIPE,
-    payload: request
+    recipe
   }
 };
 

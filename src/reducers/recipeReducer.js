@@ -40,7 +40,10 @@ export const recipeReducer = (state=initialState, action) => {
     case FETCH_RECIPE:
       return Object.assign({},state,{recipe: {error: null, loading: true} }); 
     case FETCH_RECIPE_SUCCESS:
-      return Object.assign({},state,{recipe: action.recipe }); 
+      return Object.assign({},state,{recipe: action.recipe}); 
+    case EDIT_RECIPE:
+      return Object.assign({},state,{recipe: action.recipe}); 
+
     default: 
       return state; 
   }
