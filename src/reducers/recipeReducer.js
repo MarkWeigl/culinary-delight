@@ -2,7 +2,7 @@ import {
   ADD_RECIPE, VIEW_RECIPE, EDIT_RECIPE, DELETE_RECIPE, DELETE_RECIPE_SUCCESS, DELETE_RECIPE_FAILURE, 
   RESET_DELETED_RECIPE, FETCH_RECIPES, FETCH_RECIPES_SUCCESS, FETCH_RECIPES_FAILURE, FETCH_RECIPE, 
   FETCH_RECIPE_SUCCESS
-} from '../actions';
+} from '../actions/recipe.js';
 import data from '../mockdata.js';
 
 const initialState = {

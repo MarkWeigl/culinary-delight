@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import LoginForm from './login-form';
-import './menu.css';
+import './splash.css';
 
 export class Splash extends React.Component {
     // If we are logged in redirect straight to the user's dashboard

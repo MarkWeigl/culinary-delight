@@ -13,30 +13,18 @@ export default class App extends Component {
   
   render () {
     return (
-        <div className="menuBar">
-          <ul className="menuList">
-            <li className="menuItem">
-              <Link to={`/recipe-list`}>
-                Recipes
-              </Link>
-            </li>
-            <li className="menuItem">
-              <Link to={`/add-recipe`}>
-                Add Recipe
-              </Link>
-            </li>
-          </ul>
-          <Splash/> 
-          <div>
-            <Route exact path="/recipe-list" component={RecipeList} />
-            <Route exact path="/add-recipe" component={RecipeForm} />
-            <Route exact path="/recipe-edit" component={RecipeEdit} />
-            <Route exact path="/recipe-details" component={RecipeDetails} />
-            <Route exact path="/register" component={RegistrationPage} />
-          
-          </div>
-
+      <div>
+        <Menu/>
+        <h1 className="title">Culinary Delight</h1>
+        <div>
+          <Route exact path="/" component={Splash} />
+          <Route exact path="/recipe-list" component={RecipeList} />
+          <Route exact path="/add-recipe" component={RecipeForm} />
+          <Route exact path="/recipe-edit" component={RecipeEdit} />
+          <Route exact path="/recipe-details" component={RecipeDetails} />
+          <Route exact path="/register" component={RegistrationPage} />        
         </div>
+      </div>
     )
   }
 }
