@@ -20,7 +20,6 @@ const initialState = {
     ingredients: "",
     steps: "",
     servings: "",
-    servingsize: "",
     error: null,
     loading: false
   }
@@ -43,7 +42,6 @@ export const recipeReducer = (state=initialState, action) => {
       return Object.assign({},state,{recipe: action.recipe}); 
     case EDIT_RECIPE:
       return Object.assign({},state,{recipe: action.recipe}); 
-
     default: 
       return state; 
   }

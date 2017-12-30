@@ -8,13 +8,14 @@ export class Splash extends React.Component {
     // If we are logged in redirect straight to the user's dashboard
     render() {
       if (this.props.loggedIn) {
-        return <Redirect to="/dashboard" />;
+        return <Redirect to="/recipe-list" />;
       }
       return (
           <div className="home">
               <h2>Welcome to Culinary Delight</h2>
               <h4>Enter your recipes on Culinary Delight.  You can quickly view your recipes, edit them, and delete recipes you no longer need.</h4>
               <LoginForm />
+              <br></br>
               <Link to="/register">Register</Link>
           </div>
       );

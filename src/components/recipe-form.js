@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {addRecipe} from '../actions';
+import {addRecipe} from '../actions/recipe.js';
 import {Button} from 'react-bootstrap';
 import {reduxForm, Field} from 'redux-form';
 import {connect} from 'react';
@@ -15,7 +15,7 @@ export class RecipeForm extends Component {
     return (
       <div className="container">
         <div className="row">
-            <div className="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1" id="content"> 
+            <div className="col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1" id="content"> 
               <form onSubmit={this.props.handleSubmit(values => this.addRecipe(values))}>            
                 <div>
                     <label>Name</label>
@@ -51,6 +51,7 @@ export class RecipeForm extends Component {
                     </div>
                 </div>
                  <div>
+                    <br></br>
                     <label>Cuisine</label>
                     <div> 
                         <Field 
@@ -66,6 +67,7 @@ export class RecipeForm extends Component {
                     </div>
                 </div>
                 <div>
+                    <br></br>                
                     <label>Ingredients</label>
                     <div>
                         <Field 
@@ -94,17 +96,8 @@ export class RecipeForm extends Component {
                             component="input" 
                         />
                     </div>
-                </div>
-                <div>
-                    <label>Serving Size</label>
-                    <div>        
-                        <Field 
-                            name="servingsize"
-                            type="text" 
-                            component="Input"  
-                        />
-                    </div>
-                </div>        
+                </div>  
+                <br></br>      
                 <Button type="submit" className="btn btn-primary">Submit</Button>
               </form>
             </div>

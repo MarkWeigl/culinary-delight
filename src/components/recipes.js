@@ -9,9 +9,6 @@ export default class Recipes extends React.Component {
         <RecipeForm />
       </div>
     );
-  }
-
-        
+  }       
 }
-
-    
+   
