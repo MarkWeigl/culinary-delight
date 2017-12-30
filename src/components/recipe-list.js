@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import {fetchRecipes, recipeDetails} from '../actions'
+import {fetchRecipes, recipeDetails} from '../actions/recipe.js'
 import { connect } from 'react-redux' 
 import { bindActionCreators } from 'redux'
 
@@ -14,7 +14,7 @@ class RecipeList extends Component {
       return (
         <li className="list-group-item" key={recipe._id} onClick = {() => this.props.recipeDetails(recipe._id)}>
           <Link style={{color:'black'}} to={"recipe-details/"}>
-            <h3 className="list-group-item-heading">{recipe.name}</h3>
+            <h4 className="list-group-item-heading">{recipe.name}</h4>
           </Link>
         </li>
       );
@@ -27,7 +27,7 @@ class RecipeList extends Component {
       <div className="container">
         <div className="row">
           <div className="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1"> 
-            <h1 className="text-center">Recipes</h1>
+            <h2 className="text-center">Recipes</h2>
             <ul className="list-group">
               {this.renderRecipes(this.props.recipes)}
             </ul>

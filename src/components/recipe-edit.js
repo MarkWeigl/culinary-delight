@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import {reduxForm, Field} from 'redux-form';
-import {editRecipe} from '../actions';
+import {editRecipe} from '../actions/recipe.js';
 
 class RecipeEdit extends Component {
   editRecipe(values) {
@@ -22,7 +23,7 @@ class RecipeEdit extends Component {
                                 <Field 
                                     name="name"
                                     type="text" 
-                                    component="input"        
+                                    component="Input"        
                                 />
                             </div>
                         </div>
@@ -50,6 +51,7 @@ class RecipeEdit extends Component {
                             </div>
                         </div>
                          <div>
+                         <br></br>
                             <label>Cuisine</label>
                             <div> 
                                 <Field 
@@ -65,7 +67,8 @@ class RecipeEdit extends Component {
                             </div>
                         </div>
                         <div>
-                            <label>Cuisine</label>
+                            <br></br>
+                            <label>Ingredients</label>
                             <div>    
                                 <Field 
                                     name="ingredients"
@@ -90,27 +93,21 @@ class RecipeEdit extends Component {
                                 <Field 
                                     name="servings"
                                     type="number" 
-                                    component="input" 
+                                    component="Input" 
                                 />
                             </div>
-                        </div>
-                        <div>
-                            <label>Serving Size</label>
-                            <div>        
-                                <Field 
-                                    name="servingsize"
-                                    type="text" 
-                                    component="Input"  
-                                />
-                            </div>
-                        </div>        
-                        <Button className="edit-btn" onClick={this.RecipeEdit}>Cancel</Button>
-                        <Button type="submit" className="btn btn-primary">Submit</Button>
+                        </div> 
+                        <br></br>  
+                        <Link to={`/recipe-list`}>    
+                            <Button className="btn btn-default">Cancel</Button>
+                        </Link>
+                        &nbsp; &nbsp;
+                        <Button className="btn btn-primary" type="submit" >Submit</Button>
                       </form>
                     </div>
                 </div>
             </div>
-    )
+        )
     }
 };
 

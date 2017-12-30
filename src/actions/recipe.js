@@ -7,8 +7,6 @@ export const FETCH_RECIPE = 'FETCH_RECIPE';
 export const FETCH_RECIPES_FAILURE = 'FETCH_RECIPES_FAILURE';
 export const RECIPE_DETAILS = 'RECIPE_DETAILS';
 export const RESET_RECIPES = 'RESET_RECIPES';
-export const CLEAR_AUTH = 'CLEAR_AUTH';
-
 
 export const ADD_RECIPE = 'ADD_RECIPE';
 export const addRecipe = (recipe) => dispatch => {
