@@ -3,7 +3,6 @@ import {recipeReducer} from './reducers/recipeReducer';
 import protectedDataReducer from './reducers/protected-data';
 import { reducer as formReducer } from 'redux-form';
 import authReducer from './reducers/auth';
-import promise from 'redux-promise';
 import thunk from 'redux-thunk';
 
 const reducers = combineReducers({
