@@ -1,6 +1,5 @@
 import axios from 'axios';
 import {API_BASE_URL} from '../config.js';
-import {SubmissionError} from 'redux-form';
 
 export const FETCH_RECIPES = 'FETCH_RECIPES';
 export const FETCH_RECIPE = 'FETCH_RECIPE';
@@ -9,11 +8,13 @@ export const RECIPE_DETAILS = 'RECIPE_DETAILS';
 export const RESET_RECIPES = 'RESET_RECIPES';
 
 export const ADD_RECIPE = 'ADD_RECIPE';
-export const addRecipe = (recipe) => dispatch => {
-  fetch(`${API_BASE_URL}/recipes`,
-    {method:'POST',
+export const addRecipe = (recipe) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;    
+  fetch(`${API_BASE_URL}/recipes`, {
+    method:'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`      
     },
     body: JSON.stringify(recipe)
   })
@@ -27,13 +28,52 @@ export const addRecipe = (recipe) => dispatch => {
   }
 };
 
-export const fetchRecipes = () => dispatch => {
-    fetch(`${API_BASE_URL}/recipes`)
-      .then(res => res.json())
-      .then(recipes => {
-        dispatch(fetchRecipesSuccess(recipes))
+export const EDIT_RECIPE = 'EDIT_RECIPE';
+export const editRecipe = (recipe) => (getState) => {
+  fetch(`${API_BASE_URL}/recipes/${recipe._id}`, {
+    method: 'PUT',  
+    headers: { 
+      'Content-Type': 'application/json'
+    }, 
+    body: JSON.stringify(recipe)
+  });
+  return {
+    type: EDIT_RECIPE,
+    recipe
+  }
+};
+
+// export const EDIT_RECIPE = 'EDIT_RECIPE';
+// export const editRecipe = (recipe) => (getState) => {
+//   const authToken = getState().auth.authToken;      
+//   fetch(`${API_BASE_URL}/recipes/${recipe._id}`, {
+//     method: 'PUT',
+//     headers: {
+//         // Provide our auth token as credentials
+//         Authorization: `Bearer ${authToken}`
+//     },    
+//     data: recipe
+//   });
+//   return {
+//     type: EDIT_RECIPE,
+//     recipe
+//   }
+// };
+
+export const fetchRecipes = () => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;  
+  fetch(`${API_BASE_URL}/recipes`, {
+      method: 'GET',
+      headers: {
+          // Provide our auth token as credentials
+          Authorization: `Bearer ${authToken}`
       }
-    );
+    })
+    .then(res => res.json())
+    .then(recipes => {
+      dispatch(fetchRecipesSuccess(recipes))
+    }
+  );
 };
 
 export const FETCH_RECIPES_SUCCESS = 'FETCH_RECIPES_SUCCESS';
@@ -42,14 +82,20 @@ export const fetchRecipesSuccess = recipes => ({
   recipes  
 })
 
-export const recipeDetails = (id) => dispatch => {
-    const route = `${API_BASE_URL}/recipes/${id}`;
-    fetch(route)
-      .then(res => res.json())
-      .then(recipe => {
-        dispatch(fetchRecipeSuccess(recipe))
-      }
-    );
+export const recipeDetails = (id) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;    
+  fetch(`${API_BASE_URL}/recipes/${id}`, {
+    method: 'GET',
+    headers: {
+        // Provide our auth token as credentials
+        Authorization: `Bearer ${authToken}`
+    }    
+  })
+    .then(res => res.json())
+    .then(recipe => {
+      dispatch(fetchRecipeSuccess(recipe))
+    }
+  );
 };
 
 export const FETCH_RECIPE_SUCCESS = 'FETCH_RECIPE_SUCCESS';
@@ -58,24 +104,16 @@ export const fetchRecipeSuccess = recipe => ({
   recipe  
 })
 
-export const EDIT_RECIPE = 'EDIT_RECIPE';
-export const editRecipe = (recipe) => {
-  const request = axios({
-    method: 'put',
-    url: 'http://localhost:8080/recipes/'+recipe._id,
-    data: recipe
-  });
-  return {
-    type: EDIT_RECIPE,
-    recipe
-  }
-};
-
 export const DELETE_RECIPE = 'DELETE_RECIPE';
-export const deleteRecipe = (id) => {
+export const deleteRecipe = (id) => (getState) => {
+  const authToken = getState().auth.authToken;      
   const request = axios({
     method: 'delete',
     url: 'http://localhost:8080/recipes/'+id,
+    headers: {
+        // Provide our auth token as credentials
+        Authorization: `Bearer ${authToken}`
+    }    
   });
   return {
     type: DELETE_RECIPE,

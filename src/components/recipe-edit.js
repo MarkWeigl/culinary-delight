@@ -50,8 +50,8 @@ class RecipeEdit extends Component {
                                 </Field>
                             </div>
                         </div>
-                         <div>
-                         <br></br>
+                        <div>
+                            <br></br>
                             <label>Cuisine</label>
                             <div> 
                                 <Field 

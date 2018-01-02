@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import {recipeDetails, deleteRecipe} from '../actions/recipe.js'
+import {deleteRecipe} from '../actions/recipe.js'
 import { connect } from 'react-redux' 
 import { bindActionCreators } from 'redux'
 
