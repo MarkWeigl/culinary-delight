@@ -40,11 +40,12 @@ export class RecipeForm extends Component {
                     <div>
                         <Field 
                             name="course"
+                            type="select"
                             component="select">  
-                            <option value="breakfast">Breakfast</option>
-                            <option value="lunch">Lunch</option>
-                            <option value="dinner">Dinner</option>
-                            <option value="dessert">Dessert</option> 
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Dessert">Dessert</option> 
                         </Field>
                     </div>
                 </div>
@@ -54,13 +55,14 @@ export class RecipeForm extends Component {
                     <div> 
                         <Field 
                             name="cuisine"
+                            type="select"
                             component="select">  
-                            <option value="breakfast">American</option>
-                            <option value="lunch">Asian</option>
-                            <option value="dinner">European</option>
-                            <option value="dessert">Mexican</option>
-                            <option value="breakfast">South American</option>
-                            <option value="lunch">Middle Eastern</option>
+                            <option value="American">American</option>
+                            <option value="Asian">Asian</option>
+                            <option value="European">European</option>
+                            <option value="Mexican">Mexican</option>
+                            <option value="South American">South American</option>
+                            <option value="Middle Eastern">Middle Eastern</option>
                         </Field>
                     </div>
                 </div>

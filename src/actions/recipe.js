@@ -10,8 +10,8 @@ export const RESET_RECIPES = 'RESET_RECIPES';
 export const ADD_RECIPE = 'ADD_RECIPE';
 export const addRecipe = (recipe) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;    
-  fetch(`${API_BASE_URL}/recipes`,
-    {method:'POST',
+  fetch(`${API_BASE_URL}/recipes`, {
+    method:'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${authToken}`      
@@ -27,6 +27,38 @@ export const addRecipe = (recipe) => (dispatch, getState) => {
     data: recipe
   }
 };
+
+export const EDIT_RECIPE = 'EDIT_RECIPE';
+export const editRecipe = (recipe) => (getState) => {
+  fetch(`${API_BASE_URL}/recipes/${recipe._id}`, {
+    method: 'PUT',  
+    headers: { 
+      'Content-Type': 'application/json'
+    }, 
+    body: JSON.stringify(recipe)
+  });
+  return {
+    type: EDIT_RECIPE,
+    recipe
+  }
+};
+
+// export const EDIT_RECIPE = 'EDIT_RECIPE';
+// export const editRecipe = (recipe) => (getState) => {
+//   const authToken = getState().auth.authToken;      
+//   fetch(`${API_BASE_URL}/recipes/${recipe._id}`, {
+//     method: 'PUT',
+//     headers: {
+//         // Provide our auth token as credentials
+//         Authorization: `Bearer ${authToken}`
+//     },    
+//     data: recipe
+//   });
+//   return {
+//     type: EDIT_RECIPE,
+//     recipe
+//   }
+// };
 
 export const fetchRecipes = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;  
@@ -71,23 +103,6 @@ export const fetchRecipeSuccess = recipe => ({
   type: FETCH_RECIPE_SUCCESS,
   recipe  
 })
-
-export const EDIT_RECIPE = 'EDIT_RECIPE';
-export const editRecipe = (recipe) => (getState) => {
-  const authToken = getState().auth.authToken;      
-  fetch(`${API_BASE_URL}/recipes/${recipe._id}`, {
-    method: 'PUT',
-    headers: {
-        // Provide our auth token as credentials
-        Authorization: `Bearer ${authToken}`
-    },    
-    data: recipe
-  });
-  return {
-    type: EDIT_RECIPE,
-    recipe
-  }
-};
 
 export const DELETE_RECIPE = 'DELETE_RECIPE';
 export const deleteRecipe = (id) => (getState) => {

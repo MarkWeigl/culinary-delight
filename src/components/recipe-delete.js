@@ -8,7 +8,6 @@ class DeleteRecipe extends Component {
         <h3>Recipe Deleted</h3>
       )
     };
-
 } 
 
 export default DeleteRecipe;
