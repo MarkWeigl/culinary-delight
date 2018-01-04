@@ -1,6 +1,6 @@
 import {
-  EDIT_RECIPE, FETCH_RECIPES, FETCH_RECIPES_SUCCESS, FETCH_RECIPES_FAILURE, FETCH_RECIPE, 
-  FETCH_RECIPE_SUCCESS
+  FETCH_RECIPES, FETCH_RECIPES_SUCCESS, FETCH_RECIPES_FAILURE, FETCH_RECIPE, 
+  FETCH_RECIPE_SUCCESS, EDIT_RECIPE_SUCCESS, DELETE_RECIPE_SUCCESS
 } from '../actions/recipe.js';
 
 const initialState = {
@@ -38,8 +38,22 @@ export const recipeReducer = (state=initialState, action) => {
       return Object.assign({},state,{recipe: {error: null, loading: true} }); 
     case FETCH_RECIPE_SUCCESS:
       return Object.assign({},state,{recipe: action.recipe}); 
-    case EDIT_RECIPE:
+    case EDIT_RECIPE_SUCCESS:
       return Object.assign({},state,{recipe: action.recipe}); 
+    case DELETE_RECIPE_SUCCESS:
+      return Object.assign({},state,{recipe: {
+              id: "",
+              name: "",
+              description: "",
+              course: "",
+              cuisine: "",
+              ingredients: "",
+              steps: "",
+              servings: "",
+              error: null,
+              loading: false
+            }
+    });     
     default: 
       return state; 
   }
