@@ -42,6 +42,7 @@ export class RecipeForm extends Component {
                             name="course"
                             type="select"
                             component="select">  
+                            <option value="" disabled defaultValue>Choose Course</option>
                             <option value="Breakfast">Breakfast</option>
                             <option value="Lunch">Lunch</option>
                             <option value="Dinner">Dinner</option>
@@ -57,6 +58,7 @@ export class RecipeForm extends Component {
                             name="cuisine"
                             type="select"
                             component="select">  
+                            <option value="" disabled defaultValue>Choose Cuisine</option>
                             <option value="American">American</option>
                             <option value="Asian">Asian</option>
                             <option value="European">European</option>

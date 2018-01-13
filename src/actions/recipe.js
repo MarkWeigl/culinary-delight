@@ -65,6 +65,7 @@ export const deleteRecipe = (id) => (dispatch, getState) => {
         Authorization: `Bearer ${authToken}`
     }    
   })
+  .then(res => dispatch(fetchRecipes()))
   .then(res => dispatch(deleteRecipeSuccess(res)))
   .catch(err => {
     console.log(err);
