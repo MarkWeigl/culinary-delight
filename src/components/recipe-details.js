@@ -27,7 +27,7 @@ class RecipeDetails extends Component {
               <button className="btn btn-primary">Edit</button>
             </Link>
             &nbsp; &nbsp;
-            <Link to={`/recipe-delete`}>
+            <Link to={`/recipe-list`}>
               <button className="btn btn-danger" onClick = {() => this.props.deleteRecipe(this.props.recipe._id)}>Delete</button>
             </Link>
           </div>
@@ -42,7 +42,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators ({deleteRecipe: deleteRecipe},dispatch)
+  return bindActionCreators ({deleteRecipe: deleteRecipe}, dispatch)
 }
 export default connect(mapStateToProps,mapDispatchToProps)(RecipeDetails);
 
