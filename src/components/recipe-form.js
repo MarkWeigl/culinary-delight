@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {addRecipe} from '../actions/recipe.js';
 import {Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import {reduxForm, Field} from 'redux-form';
 
 export class RecipeForm extends Component {
   addRecipe(values) {
-      this.props.dispatch(addRecipe(values));
+      this.props.dispatch(addRecipe(values, this.props.user));
       this.props.history.push("/recipe-list");
   }
 
@@ -99,7 +101,11 @@ export class RecipeForm extends Component {
                         />
                     </div>
                 </div>  
-                <br></br>      
+                <br></br>   
+                <Link to={`/recipe-list`}>    
+                    <Button className="btn btn-default">Cancel</Button>
+                </Link>  
+                &nbsp; &nbsp;                                 
                 <Button type="submit" className="btn btn-primary">Submit</Button>
               </form>
             </div>
@@ -108,6 +114,15 @@ export class RecipeForm extends Component {
     )
   }
 };
-export default reduxForm({
+
+const mapStateToProps = state => ({
+  user: state.auth.currentUser.username
+});
+
+RecipeForm = reduxForm({
     form: 'recipeForm'
 })(RecipeForm)
+
+RecipeForm = connect(mapStateToProps)(RecipeForm);
+
+export default RecipeForm;

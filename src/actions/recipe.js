@@ -7,7 +7,8 @@ export const RECIPE_DETAILS = 'RECIPE_DETAILS';
 export const RESET_RECIPES = 'RESET_RECIPES';
 
 export const ADD_RECIPE = 'ADD_RECIPE';
-export const addRecipe = (recipe) => (dispatch, getState) => {
+export const addRecipe = (recipe, user) => (dispatch, getState) => {
+  recipe.user = user;
   const authToken = getState().auth.authToken;    
   fetch(`${API_BASE_URL}/recipes`, {
     method:'POST',
@@ -72,9 +73,9 @@ export const deleteRecipe = (id) => (dispatch, getState) => {
   });
 };
 
-export const fetchRecipes = () => (dispatch, getState) => {
+export const fetchRecipes = (user) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;  
-  fetch(`${API_BASE_URL}/recipes`, {
+  fetch(`${API_BASE_URL}/recipes/${user}`, {
       method: 'GET',
       headers: {
           // Provide our auth token as credentials
