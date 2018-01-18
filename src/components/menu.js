@@ -12,17 +12,11 @@ export class Menu extends React.Component {
   }
     
   render() {
-    let logOutButton;
+
+    let recipeMenu;
 
     if (this.props.loggedIn) {
-      logOutButton = (
-        <li className="menuItem logOut" onClick={() => this.logOut()}>Log out</li>
-      );
-    } 
-
-    return (
-    // Only render the log out button if we are logged in
-      <div className="menu">
+      recipeMenu = (
         <ul className="menuList">
           <li className="menuItem">
             <Link to={`/recipe-list`}>
@@ -34,9 +28,19 @@ export class Menu extends React.Component {
               Add Recipe
             </Link>
           </li>
-          {logOutButton}
+          <li className="menuItem logOut" onClick={() => this.logOut()}>
+            <Link to={`/`}>
+              Log out
+            </Link>
+          </li>
         </ul>
+      );
+    } 
 
+    return (
+    // Only render the log out button if we are logged in
+      <div className="menu">
+        {recipeMenu}
       </div>
     );
   }

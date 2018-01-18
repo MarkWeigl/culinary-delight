@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 
 class RecipeList extends Component {
   componentWillMount() {
-    this.props.fetchRecipes();
+    this.props.fetchRecipes(this.props.user);
   }
 
   renderRecipes(recipes) {
@@ -39,12 +39,13 @@ class RecipeList extends Component {
 }
 
 const mapStateToProps = state => ({
-  recipes: state.recipeReducer.recipeList.recipes
+  recipes: state.recipeReducer.recipeList.recipes,
+  user: state.auth.currentUser.username
 });
 const mapDispatchToProps = dispatch => {
   return bindActionCreators ({recipeDetails: recipeDetails, fetchRecipes: fetchRecipes},dispatch)
 }
-export default connect(mapStateToProps,mapDispatchToProps)(RecipeList);
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeList);
 
 
 
