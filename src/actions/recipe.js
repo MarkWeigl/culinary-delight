@@ -97,7 +97,7 @@ export const fetchRecipesSuccess = recipes => ({
 
 export const recipeDetails = (id) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;    
-  fetch(`${API_BASE_URL}/recipes/${id}`, {
+  fetch(`${API_BASE_URL}/recipes/details/${id}`, {
     method: 'GET',
     headers: {
         // Provide our auth token as credentials
