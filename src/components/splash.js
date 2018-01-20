@@ -12,8 +12,9 @@ export class Splash extends React.Component {
       }
       return (
           <div className="home">
-              <h2>Welcome!</h2>
-              <h4>Enter your recipes on Culinary Delight.  You can quickly view your recipes, edit them, and delete recipes you no longer need.</h4>
+              <h2>Welcome!</h2><br></br>
+              <h4>Enter your recipes on Culinary Delight.</h4>
+              <h4>You can quickly view your recipes, edit them, and delete recipes you no longer need.</h4>
               <LoginForm />
               <br></br>
               <Link to="/register">Register</Link>

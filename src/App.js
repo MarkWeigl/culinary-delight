@@ -15,7 +15,6 @@ export default class App extends Component {
     return (
       <div>
         <Menu/>
-        <h1 className="title">Culinary Delight</h1>
         <div>
           <Route exact path="/" component={Splash} />
           <Route exact path="/recipe-list" component={RecipeList} />

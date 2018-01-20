@@ -14,6 +14,7 @@ class RecipeDetails extends Component {
     return (
       <div className="container">
         <div className="row">
+          <h2 className="text-center">Recipe Details</h2>
           <div className="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1" id="content"> 
             <h3 className="list-group-item-heading">Recipe Name: {this.props.recipe.name}</h3>
             <h4 className="list-group-item">Description: {this.props.recipe.description}</h4>
@@ -28,7 +29,7 @@ class RecipeDetails extends Component {
             </Link>
             &nbsp; &nbsp;
             <Link to={`/recipe-list`}>
-              <button className="btn btn-danger" onClick = {() => this.props.deleteRecipe(this.props.recipe._id)}>Delete</button>
+              <button className="btn btn-danger" onClick = {() => this.props.deleteRecipe(this.props.recipe._id, this.props.user)}>Delete</button>
             </Link>
           </div>
         </div>
@@ -38,7 +39,8 @@ class RecipeDetails extends Component {
 }
 
 const mapStateToProps = state => ({
-  recipe: state.recipeReducer.recipe
+  recipe: state.recipeReducer.recipe,
+  user: state.auth.currentUser.username
 });
 
 const mapDispatchToProps = dispatch => {

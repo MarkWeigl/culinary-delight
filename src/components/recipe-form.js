@@ -15,6 +15,7 @@ export class RecipeForm extends Component {
     return (
       <div className="container">
         <div className="row">
+            <h2 className="text-center">Add New Recipe</h2>
             <div className="col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1" id="content"> 
               <form onSubmit={this.props.handleSubmit(values => this.addRecipe(values))}>            
                 <div>

@@ -20,7 +20,7 @@ export const addRecipe = (recipe, user) => (dispatch, getState) => {
   })
   .then(res => res.json())
   .then(res => {
-    dispatch(fetchRecipes());
+    dispatch(fetchRecipes(user));
   });
   return {
     type: ADD_RECIPE,
@@ -57,7 +57,7 @@ export const deleteRecipeSuccess = () => ({
     type: DELETE_RECIPE_SUCCESS, 
 })
 
-export const deleteRecipe = (id) => (dispatch, getState) => {
+export const deleteRecipe = (id, user) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;      
   fetch(`${API_BASE_URL}/recipes/${id}`, {
     method: 'DELETE',
@@ -66,7 +66,7 @@ export const deleteRecipe = (id) => (dispatch, getState) => {
         Authorization: `Bearer ${authToken}`
     }    
   })
-  .then(res => dispatch(fetchRecipes()))
+  .then(res => dispatch(fetchRecipes(user)))
   .then(res => dispatch(deleteRecipeSuccess(res)))
   .catch(err => {
     console.log(err);
