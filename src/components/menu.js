@@ -40,6 +40,7 @@ export class Menu extends React.Component {
     return (
     // Only render the log out button if we are logged in
       <div className="menu">
+        <span className="logo">Culinary Delight</span>
         {recipeMenu}
       </div>
     );

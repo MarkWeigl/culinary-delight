@@ -15,6 +15,7 @@ class RecipeEdit extends Component {
     return (
         <div className="container">
             <div className="row">
+                <h2 className="text-center">Edit Recipe</h2>
                 <div className="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1"> 
                       <form onSubmit={this.props.handleSubmit(values => this.editRecipe(values))}>              
                         <div>
