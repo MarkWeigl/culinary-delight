@@ -2,3 +2,13 @@
 .title {
   text-align: center;
 }
+
+.btn-submit {
+  background-color: #382d07;
+  color: white;
+}
+
+.btn-submit:hover {
+  background-color: #604e09;
+  color: white;
+}

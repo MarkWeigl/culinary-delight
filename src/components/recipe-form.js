@@ -107,7 +107,7 @@ export class RecipeForm extends Component {
                     <Button className="btn btn-default">Cancel</Button>
                 </Link>  
                 &nbsp; &nbsp;                                 
-                <Button type="submit" className="btn btn-primary">Submit</Button>
+                <Button type="submit" className="btn btn-submit">Submit</Button>
               </form>
             </div>
         </div>

@@ -13,19 +13,24 @@
   width: 100%;
   list-style: none;
   padding-left: 0;
+  margin-top: -30px;
 }
 
 .menuItem {
   display: inline;
   padding: 0 20px;
-  vertical-align: center;  
+  vertical-align: center; 
 }
 
 .menuItem a {
   color: white;
   font-size: 16px;
+  text-decoration: none; 
 }
 
+.menuItem a:hover {
+  font-weight: bold;
+}
 .menu {
   background-color: #ce7023;
   height: 50px;

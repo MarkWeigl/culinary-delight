@@ -25,7 +25,7 @@ class RecipeDetails extends Component {
             <h4 className="list-group-item">Servings: {this.props.recipe.servings}</h4>
             <br></br>
             <Link to={`/recipe-edit`}>
-              <button className="btn btn-primary">Edit</button>
+              <button className="btn btn-submit">Edit</button>
             </Link>
             &nbsp; &nbsp;
             <Link to={`/recipe-list`}>

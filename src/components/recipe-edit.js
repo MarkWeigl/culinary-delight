@@ -103,7 +103,7 @@ class RecipeEdit extends Component {
                             <Button className="btn btn-default">Cancel</Button>
                         </Link>
                         &nbsp; &nbsp;
-                        <Button className="btn btn-primary" type="submit" >Submit</Button>
+                        <Button className="btn btn-submit" type="submit" >Submit</Button>
                       </form>
                     </div>
                 </div>
