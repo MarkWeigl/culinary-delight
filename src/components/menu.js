@@ -4,6 +4,7 @@ import './menu.css';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
+import logo from '../images/bgi.png'
 
 export class Menu extends React.Component {
   logOut() {
@@ -41,6 +42,7 @@ export class Menu extends React.Component {
     // Only render the log out button if we are logged in
       <div className="menu">
         <span className="logo">Culinary Delight</span>
+        <img className="logoimage" src={logo}/>
         {recipeMenu}
       </div>
     );

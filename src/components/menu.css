@@ -27,7 +27,7 @@
 }
 
 .menu {
-  background-color: grey;
+  background-color: #ce7023;
   height: 50px;
   padding: 0 40px;
 }
@@ -42,4 +42,12 @@
   float: left;
   font-size: 24px;
   color: white;
+  padding-top: 7px;
+}
+
+.logoimage {
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+  margin-top: 5px;
 }
