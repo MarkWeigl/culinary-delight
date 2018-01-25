@@ -16,12 +16,13 @@ class RecipeEdit extends Component {
         <div className="container">
             <div className="row">
                 <h2 className="text-center">Edit Recipe</h2>
-                <div className="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1"> 
+                <div className="col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1" id="content"> 
                       <form onSubmit={this.props.handleSubmit(values => this.editRecipe(values))}>              
                         <div>
                             <label>Name</label>
                             <div>
                                 <Field 
+                                    className="inputwidth"
                                     name="name"
                                     type="text" 
                                     component="Input"        
@@ -32,6 +33,7 @@ class RecipeEdit extends Component {
                             <label>Description</label>
                             <div>
                                 <Field 
+                                    className="inputwidth"
                                     name="description"
                                     type="textarea" 
                                     component="textarea" 
@@ -72,6 +74,7 @@ class RecipeEdit extends Component {
                             <label>Ingredients</label>
                             <div>    
                                 <Field 
+                                    className="inputwidth"
                                     name="ingredients"
                                     type="textarea" 
                                     component="textarea" 
@@ -82,6 +85,7 @@ class RecipeEdit extends Component {
                             <label>Steps</label>
                             <div>
                                 <Field 
+                                    className="inputwidth"
                                     name="steps"
                                     type="textarea" 
                                     component="textarea" 
@@ -92,6 +96,7 @@ class RecipeEdit extends Component {
                             <label>Servings</label>
                             <div>
                                 <Field 
+                                    className="inputwidth"
                                     name="servings"
                                     type="number" 
                                     component="Input" 

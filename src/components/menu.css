@@ -56,3 +56,35 @@
   margin-left: 20px;
   margin-top: 5px;
 }
+
+@media only screen and (max-width: 500px) {
+  .menu {
+    background-color: #ce7023;
+    height: 80px;
+    text-align: center;
+  }
+  .menuList {
+    text-align: center;
+    width: 100%;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 12px;
+  }
+  .menuItem a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none; 
+  }
+  .logo {
+    float: none;
+    font-size: 16px;
+    color: white;
+    padding-top: 7px;
+  }
+ .logoimage {
+    height: 30px;
+    width: 30px;
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+}

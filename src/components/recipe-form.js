@@ -22,6 +22,7 @@ export class RecipeForm extends Component {
                     <label>Name</label>
                     <div>
                         <Field 
+                            className="inputwidth" 
                             name="name"
                             type="text" 
                             component="input"        
@@ -32,6 +33,7 @@ export class RecipeForm extends Component {
                     <label>Description</label>
                     <div>
                         <Field 
+                            className="inputwidth"
                             name="description"
                             type="textarea" 
                             component="textarea" 
@@ -76,6 +78,7 @@ export class RecipeForm extends Component {
                     <label>Ingredients</label>
                     <div>
                         <Field 
+                            className="inputwidth"
                             name="ingredients"
                             type="textarea" 
                             component="textarea" 
@@ -86,6 +89,7 @@ export class RecipeForm extends Component {
                     <label>Steps</label>
                     <div>
                         <Field 
+                            className="inputwidth"
                             name="steps"
                             type="textarea" 
                             component="textarea" 
@@ -96,6 +100,7 @@ export class RecipeForm extends Component {
                     <label>Servings</label>
                     <div>
                         <Field 
+                            className="inputwidth"
                             name="servings"
                             type="number" 
                             component="input" 

@@ -26,7 +26,7 @@ class RecipeList extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1"> 
+          <div className="col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1"> 
             <h2 className="text-center">Recipes</h2>
             <ul className="list-group">
               {this.renderRecipes(this.props.recipes)}
