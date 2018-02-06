@@ -42,7 +42,7 @@ export class Menu extends React.Component {
     // Only render the log out button if we are logged in
       <div className="menu">
         <span className="logo">Culinary Delight</span>
-        <img className="logoimage" src={logo}/>
+        <img className="logoimage" alt="logo" src={logo}/>
         {recipeMenu}
       </div>
     );
